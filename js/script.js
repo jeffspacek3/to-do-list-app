@@ -10,18 +10,18 @@ function newItem(){
      alert('You must write something!');
    } else {
      let list = $('#list');
-     list.appendChild(li);
+     list.append(li);
    }
 
  //2. Crossing out an item from the list of items:
    function crossOut() {
- 		li.classList.toggle("strike");
+ 		li.toggleClass("strike");
  	}
  	li.on("dblclick",crossOut);
 
  // Add delete button "X"
 	
-   let crossOutButton = $('<button></button>');
+   let crossOutButton = $('<crossOutbutton></crossOutbutton>');
  	crossOutButton.append(document.createTextNode("X"));
  	li.append(crossOutButton);
 
@@ -30,7 +30,7 @@ function newItem(){
  // Adding CLASS DELETE (DISPLAY: NONE) from the css:
 	
    function deleteListItem(){
- 		li.classList.add('delete')
+ 		li.addClass('delete')
  	}
 	
  // Reordering the items
