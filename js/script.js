@@ -17,24 +17,23 @@ function newItem(){
    function crossOut() {
  		li.toggleClass("strike");
  	}
- 	li.on("dblclick",crossOut);
-
- // Add delete button "X"
 	
+ 	li.on("dblclick", function crossOut() {li.toggleClass("strike")});
+
+	
+ //3(i). Add delete button "X"
    let crossOutButton = $('<crossOutbutton></crossOutbutton>');
  	crossOutButton.append(document.createTextNode("X"));
  	li.append(crossOutButton);
-
+//3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
+	
  	crossOutButton.on("click", deleteListItem);
+	function deleteListItem(){
+		li.addClass("delete")
+	}
 	
- // Adding CLASS DELETE (DISPLAY: NONE) from the css:
 	
-   function deleteListItem(){
- 		li.addClass('delete')
- 	}
-	
- // Reordering the items
-	
+ //4. Reordering the items
    $('#list').sortable();
 	
 }
