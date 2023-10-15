@@ -21,7 +21,7 @@ function newItem() {
 
   //3(i) Add delete button "X"
 
-  let crossOutButton = $('<crossOutbutton></crossOutbutton>');
+  let crossOutButton = $('<crossOutButton></crossOutButton>');
   crossOutButton.append(document.createTextNode("X"));
   li.append(crossOutButton);
 
